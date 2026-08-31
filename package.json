@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "node -e \"const f=require('fs');['.next','out'].forEach(d=>f.rmSync(d,{recursive:true,force:true}))\"",
+    "preview": "npx --yes serve out"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
